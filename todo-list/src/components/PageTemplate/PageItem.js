@@ -4,6 +4,11 @@ import cn from 'classnames';  //여러개의 클래스 네임 사용 라이브�
 
 
 class PageItem extends Component {
+
+    shouldComponentUpdate(nextProps, nextState){
+        return this.props.done !== nextProps.done;
+    }
+
     render(){
         const { done, children, onToggle, onRemove} = this.props;
 
