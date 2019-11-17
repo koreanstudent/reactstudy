@@ -58,3 +58,18 @@ Provider 는 react-redux 라이브러리에 내장되어있는, 리액트 앱에
 ## combineReducers
 
 여러개의 서브리듀서를 하나로 합쳐줍니다. 이 과정에서 함수에 객체를 전달하게 되는데, 이 객체의 구조에 따라 합쳐진 리듀서의 상태의 구조가 만들어집니다.
+
+## 스프레드 연산자 
+
+... 세개의 점으로 이루어진 연산자로, 몇 가지 다른 역할을 담당한다.
+
+const cities = ["Kampala", "Nairobi", "Lagos"];
+console.log(...cities); // Kampala Nairobi Lagos
+
+const countries = [...east, ...west];
+console.log(countries); // [ 'Uganda', 'Kenya', 'Tanzania', 'Nigeria', 'Cameroon', 'Ghana' ]
+
+let lakes = ["경포호", "화진포", "송지호", "청초호"];
+let [first, ...rest] = lakes;
+console.log(rest.join(", ")) // 화진포, 송지호, 청초호
+

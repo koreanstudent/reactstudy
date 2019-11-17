@@ -4,22 +4,21 @@ import './Counter.css';
 
 // onContextMenu - 우클릭을 하여 메뉴가 열리는 이벤트를 의미, e.preventDefault()를 통해 메뉴가 열리지 않게 된다.
 
-const Counter = ({number, color, onIncrement, onDecrement, onSetColor}) => {
-
+const Counter = ({number, color, index, onIncrement, onDecrement, onSetColor}) => {
     return (
-        <div
-           className ="Counter"
-           onClick={onIncrement}
-           onContextMenu={(e)=> {
-               e.preventDefault();
-               onDecrement();
-           }}
-           onDoubleClick={onSetColor}
-           style={{
-               backgroundColor: color
-           }}>
-               {number}
-           </div>
+        <div 
+            className="Counter" 
+            onClick={() => onIncrement(index)} 
+            onContextMenu={
+                (e) => { 
+                    e.preventDefault(); 
+                    onDecrement(index);
+                }
+            } 
+            onDoubleClick={() => onSetColor(index)}
+            style={{backgroundColor: color}}>
+                {number}
+        </div>
     );
 };
 
