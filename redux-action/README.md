@@ -14,5 +14,10 @@ reducers폴더 - 스토어의 기본 상태 값과 상태의 업데이트를 담
 
 lib폴더 - 일부 컴포넌트에서 함께 사용되는 파일을 저장합니다.
 
+yarn add redux-actions
 
+## redux-actions => createAction, handleActions
 
+createAction 함수는 액션 생성 함수를 간단하게 만들어 준다.
+
+handleActions - swith문을 대신 사용
