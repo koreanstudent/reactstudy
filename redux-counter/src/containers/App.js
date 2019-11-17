@@ -23,6 +23,7 @@ class App extends Component {
 }
 
 // 액션함수 준비
+// 스토어에 액션을 넣을 때 store.dispatch 함수를 사용
 const mapToDispatch = (dispatch) => ({
     onCreate: () => dispatch(actions.create(getRandomColor())),
     onRemove: (index) => dispatch(actions.remove(index))

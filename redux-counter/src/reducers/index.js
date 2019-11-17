@@ -40,6 +40,7 @@ const initialState = {
     ]
 }
 // 리듀서 함수를 정의합니다. 
+// state 값이 undefined라면 initialState를 기본 값으로 사용한다 의미
 function counter(state = initialState, action) {
     // 레퍼런스 생성
     const { counters } = state;
