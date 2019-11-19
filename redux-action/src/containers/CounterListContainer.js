@@ -17,11 +17,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     onIncrement: (index) => dispatch(actions.increment(index)),
     onDecrement: (index) => dispatch(actions.decrement(index)),
-    onSetColor: (index) => {
-        const color = getRandomColor();
-        dispatch(actions.setColor({ index, color}));
-    }
-})
+    onSetColor: (index) =>  dispatch(actions.setColor({index: index, color: getRandomColor()}))
+    
+});
 
 // 데이터와 함수들이 props 로 붙은 컴포넌트 생성
 const CounterListContainer = connect(
