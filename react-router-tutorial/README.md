@@ -18,6 +18,23 @@ yarn add query-string     (url 쿼리 해석해주는 라이브러리)
 
 여러 화면으로 구성된 웹 어플리케이션을 만들게 된다면, react-router 는 필수 라이브러리
 
+## BrowserRouter
+
+다른 라우팅 컴포넌트를 사용하기 위해 기본적으로 감싸주어야 한다.
+오직 하나의 자식만을 가질 수 있다.
+비슷한 HashRoter 는 Hash(#/)로 동작하는 Router dlqslek.
+
+## Route
+
+path 속성으로 경로를 지정한다.
+render, component, children 으로 렌더링을 한다.
+정확히 매칭될때만 렌더링 하고 싶다면 exact 속성을 사용
+컴포넌트에 match, history, location 이라는 객체를 넘겨준다.
+
+## Link
+
+a 태그는 페이지 전체를 리로드 하여 렌더링 하는 반면에, Link는 페이지 전체를 리로드 하지 않고 필요한 부분만 리로드하게 된다.
+
 ## 라우트 파라미터 읽기
 
 방법은 두가지가 있는데요, params 를 사용하는 것 과, query 를 사용하는 것 입니다.
