@@ -4,9 +4,9 @@ create-react-app react-router-tutorial
 
 yarn add react-router-dom
 
-yarn add cross-env
+yarn add cross-env (package.json 절대경로 설정 start,build - cross-env NODE_PATH=src )
 
-
+yarn add query-string     (url 쿼리 해석해주는 라이브러리)
 
 ## SPA란?
 
@@ -16,7 +16,17 @@ yarn add cross-env
 
 주소에 따라 다른 뷰를 보여주는 것을 라우팅
 
-라우팅 관련 라이브러리인 react-router를 설치 구현
+여러 화면으로 구성된 웹 어플리케이션을 만들게 된다면, react-router 는 필수 라이브러리
 
+## 라우트 파라미터 읽기
 
+방법은 두가지가 있는데요, params 를 사용하는 것 과, query 를 사용하는 것 입니다.
+라우트로 설정한 컴포넌트는, 3가지의 props 를 전달받게 됩니다
+history 이 객체를 통해 push, replace 를 통해 다른 경로로 이동하거나 앞 뒤 페이지로 전환 할 수 있습니다.
+location 이 객체는 현재 경로에 대한 정보를 지니고 있고 URL 쿼리 (/about?foo=bar 형식) 정보도 가지고있습니다.
+match 이 객체에는 어떤 라우트에 매칭이 되었는지에 대한 정보가 있고 params (/about/:name 형식) 정보를 가지고있습니다.
+
+## 라우트 이동하기
+
+Link 컴포넌트  - 이 컴포넌트를 사용하면 페이지를 새로 불러오는걸 막고, 원하는 라우트로 화면 전환을 해줍니다.
 
