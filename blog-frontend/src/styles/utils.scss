@@ -1,0 +1,9 @@
+@import 'src/styles/lib/all';
+
+$breakpoints: (small: 320px, medium: 768px, large: 1024px, wide: 1400px);
+
+// open-color #oc - 색상 -밝기
+.my-class {
+    background:  $oc-gray-1;
+    color : $oc-indigo-9;
+}

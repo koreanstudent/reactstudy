@@ -16,6 +16,8 @@ store : Ducks 구조를 적용시킨 리덕스 모듈들과 스토어 생성 함
 
 styles : 폰트, 색상, 반응형 디자인 도구, 그림자 생성 함수 등 프로젝트 관련 스타일 요소
 
+yarn add open-color include-media  - 색상을 쉽게 선택할 수 있는 open-color와 반응형 디자인을 쉽게 적용할 수 있는 include-media, 그림자를 간편하게 설정 할 수 있는 material-shadow 믹스인
+
 ## webpack
 
  모듈 번들러란 여러개의 나누어져 있는 파일들을 하나의 파일로 만들어주는 라이브러리
@@ -38,4 +40,17 @@ styles : 폰트, 색상, 반응형 디자인 도구, 그림자 생성 함수 등
  list : 포스트 목록 상태를 다룬다.
 
  post : 단일 포스트 상태를 다룬다.
+
+## 기본 유저 인터페이스 생성
+
+PageTemplate, Header, Footer 컴포넌트 생성
+
+common 디렉터리에는 페이지 두 개 이상에서 사용하는 컴포넌트들을 넣는다.
+
+vs code의 generate-react-component 사용 - > scss, js, index.js 자동으로 생성해줌
+
+
+## 이해하기
+
+header.js -> pagetemplate.js -> listpage.js
  
