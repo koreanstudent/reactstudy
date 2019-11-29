@@ -1,6 +1,6 @@
 ## react-router로 SPA 개발환경
 
-create-react-app react-router-tutorial
+create react-app react-router-tutorial
 
 yarn add react-router-dom
 
