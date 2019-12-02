@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import axios from 'axios';
 import NewsList from './components/NewsList';
+import Categories from './components/Categories';
+import NewsPage from './pages/NewsPage';
+import {Route} from 'react-router-dom';
 
 // const App = () => {
 //   const [data, setData] = useState(null);
@@ -23,8 +26,22 @@ import NewsList from './components/NewsList';
 //   )
 // }
 
-const App = () => {
-  return <NewsList/>
+// const App = () => {
+
+//   const [category, setCategory] = useState('all');
+//   const onSelect =useCallback(category => setCategory(category), []);
+
+//   return (
+//     <>
+//     <Categories category={category} onSelect={onSelect}/>
+//     <NewsList category={category}/>
+//     </>
+//   )
+// }
+
+// category? 란 값이 선택적이라는 의미. 있을 수도 있고 없을 수도 있다.
+const App= () => {
+  return <Route path="/:category?" component={NewsPage}/>;
 }
 
 
