@@ -30,7 +30,7 @@ const NewsListBlock = styled.div`
 //     ); 
 // };
 
-const NewsList = () => {
+const NewsList = ({category}) => {
     const [ articles, setArticles] = useState(null);
     const [ loading, setLoading] = useState(false);
 
@@ -41,7 +41,9 @@ const NewsList = () => {
         const fetchData =async () => {
             setLoading(true);
             try{
-                const response = await axios.get('https://newsapi.org/v2/top-headlines?country=kr&apiKey=79f9ed56f7244ed693ca766c507f7c44',);
+                // category 값이 무엇인지에 따라 요청할 주소가 동적으로 바뀐다.
+                const query =category ==='all' ? '' : `&category=${category}`;
+                const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=79f9ed56f7244ed693ca766c507f7c44`,);
                 setArticles(response.data.articles);
             }catch (e){
                 console.log(e);
@@ -49,7 +51,7 @@ const NewsList = () => {
             setLoading(false);
         } 
         fetchData();
-    }, []);
+    }, [category]);
     
     // 대기 중일 때
     if(loading) {

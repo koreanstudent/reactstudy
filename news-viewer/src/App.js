@@ -1,7 +1,8 @@
-import React, { useState, useCallback } from 'react';
-import axios from 'axios';
-import NewsList from './components/NewsList';
-import Categories from './components/Categories';
+// import React, { useState, useCallback } from 'react';
+import React from 'react';
+// import axios from 'axios';
+// import NewsList from './components/NewsList';
+// import Categories from './components/Categories';
 import NewsPage from './pages/NewsPage';
 import {Route} from 'react-router-dom';
 

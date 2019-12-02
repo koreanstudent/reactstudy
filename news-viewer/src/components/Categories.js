@@ -71,7 +71,7 @@ const Category = styled(NavLink)`
 // NavLink로 만들어진 Category 컴포넌트에 to 값은 "/카테고리이름"으로 설정해 주었다.
 // to 값이 "/"를 가리키고 있을 때는 exact 값을 true로 해 주어야 한다. 
 // 이 값을 설정하지 않으면, 다른 카테고리가 선택되었을 때도 전체보기 링크에 active 스타일이 적용되는 오류가 발생
-const Categories = ({ onSelect }) => {
+const Categories = () => {
     return (
       <CategoriesBlock>
         {categories.map(c => (
