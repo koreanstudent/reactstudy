@@ -68,13 +68,13 @@ export const list = async ctx => {
 
   try {
     const posts = await Post.find()
-      .sort({ _id: -1 })
-      .limit(10)
-      .skip((page - 1) * 10)
-      .lean()
+      .sort({ _id: -1 }) // 1로 설정하면 오름차순, -1로 설정하면 내림차순
+      .limit(10) // 보이는 개수를 제한
+      .skip((page - 1) * 10) // 1페이지는 10 불러옴 . 페이처리 기능
+      .lean() //데이터를 json 형태로 조회
       .exec();
     const postCount = await Post.countDocuments().exec();
-    ctx.set('Last-Page', Math.ceil(postCount / 10));
+    ctx.set('Last-Page', Math.ceil(postCount / 10)); // Last-Page라는 커스텀 http 헤더를 설정
     ctx.body = posts.map(post => ({
       ...post,
       body:
