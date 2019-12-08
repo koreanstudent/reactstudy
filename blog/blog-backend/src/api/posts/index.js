@@ -6,11 +6,11 @@ const posts = new Router();
 posts.get('/', postsCtrl.list);
 posts.post('/', postsCtrl.write);
 
-// const post = new Router(); // /api/posts/:id
-posts.get('/:id', postsCtrl.checkObjectId,postsCtrl.read);
-posts.delete('/:id', postsCtrl.checkObjectId,postsCtrl.remove);
-posts.patch('/:id', postsCtrl.checkObjectId,postsCtrl.update);
+const post = new Router(); // /api/posts/:id
+post.get('/:id', postsCtrl.checkObjectId,postsCtrl.read);
+post.delete('/:id', postsCtrl.checkObjectId,postsCtrl.remove);
+post.patch('/:id', postsCtrl.checkObjectId,postsCtrl.update);
 
-// posts.use('/:id', postsCtrl.checkObjectId, posts.routes());
+posts.use('/:id', postsCtrl.checkObjectId, post.routes());
 
 export default posts;

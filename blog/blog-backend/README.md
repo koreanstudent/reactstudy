@@ -18,6 +18,8 @@ dotenv - 환경변수들을 파일에 넣고 사용할 수 있게 하는 개발 
 
 esm - es 모듈 import/export 문법 사용
 
+joi - request body 검증
+
 ## koa
 
 koa 애플리케이션은 미들웨어의 배열로 구성되어 있다. app.use 함수는 미들웨어 함수를 애플리케이션에 등록한다.
@@ -58,6 +60,19 @@ ex) 모델을 만들 때 mongoose.model('Post', PostSchema)
 
     findOneAndRemove() - 특정 조건을 만족하는 데이터를 하나를 찾아서 제거한다.
 
-Obkectid 검증        
+## ObjectId 검증 
+    const {ObjectId} = mongoose.Types;
+
+    export const checkObjectId = (ctx, next) => {
+    const { id } = ctx.params;
+    if (!ObjectId.isValid(id)) {
+        ctx.status = 400; // Bad Request
+        return;
+    }
+    return next();
+    };
+
+## Request Body 검증
+
 
 
