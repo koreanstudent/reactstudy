@@ -20,6 +20,8 @@ esm - es 모듈 import/export 문법 사용
 
 joi - request body 검증
 
+bcrypt - 해시를 만드는 함수와 해시를 검증하는 함수 만들기
+
 ## koa
 
 koa 애플리케이션은 미들웨어의 배열로 구성되어 있다. app.use 함수는 미들웨어 함수를 애플리케이션에 등록한다.
@@ -73,6 +75,15 @@ ex) 모델을 만들 때 mongoose.model('Post', PostSchema)
     };
 
 ## Request Body 검증
+
+    joy 사용 -객체를 검증한다.
+
+## JWT
+
+JSON WEB TOKEN 약자, 데이터가 JSON으로 이루어져 있는 토큰을 의미
+두 객첵 서로 안전하게 정보를 주고받을 수 있도록 웹 표준으로 정의된 기술
+
+
 
 
 
