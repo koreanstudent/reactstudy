@@ -17,11 +17,18 @@ UserSchema.methods.checkPassword = async function(password) {
     return result;
 }
 
+UserSchema.methods.serialize = function() {
+    const data = this.toJSON();
+    delete data.hashedPassword;
+    return data;
+}
+
 // 스태틱 함수에서의 this는 모델을 가리킨다. 여기서는 User를 가리킨다.
 // findByUsername -> username으로 데이터를 찾을 수 있게 해준다
 UserSchema.static.findByUsername =function (username) {
     return this.findOne({ username });
 }
+
 
 
 const User = mongoose.model('User', UserSchema);
