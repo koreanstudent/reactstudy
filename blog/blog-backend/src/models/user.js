@@ -25,9 +25,9 @@ UserSchema.methods.serialize = function() {
 
 // 스태틱 함수에서의 this는 모델을 가리킨다. 여기서는 User를 가리킨다.
 // findByUsername -> username으로 데이터를 찾을 수 있게 해준다
-UserSchema.static.findByUsername =function (username) {
+UserSchema.statics.findByUsername = function(username) {
     return this.findOne({ username });
-}
+  };
 
 
 
