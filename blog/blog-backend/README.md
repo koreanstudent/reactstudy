@@ -20,7 +20,16 @@ esm - es 모듈 import/export 문법 사용
 
 joi - request body 검증
 
-bcrypt - 해시를 만드는 함수와 해시를 검증하는 함수 만들기
+
+npm install node-pre-gyp
+npm install node-pre-gyp install --fallback-to-build
+npm install node
+npm install --g --production windows-build-tools@4.0.0
+npm install bcrypt
+
+npm i -g windows-build-tools - bcrypt 설치시 에러나면 윈도우에서 필수인 c, c++ 관련된 것들과 파이썬같은 것을 설치해서 다른 언어를 사용하는 라이브러리르 지원할 수 있게 해줍니다. bcrypt는 속도 때문에 c++인가 내부적으로 사용
+
+bcrypt - 해시를 만드는 함수와 해시를 검증하는 함수 만들기 
 
 ## koa
 
