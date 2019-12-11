@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^3.0.7",
+    "bcrypt": "^3.0.6",
     "dotenv": "^8.2.0",
     "eslint-config-prettier": "^6.7.0",
     "esm": "^3.2.25",
@@ -15,7 +15,7 @@
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
     "mongoose": "^5.7.14",
-    "node": "^13.3.0",
+    "node": "^11.10.1",
     "node-pre-gyp": "^0.14.0"
   },
   "devDependencies": {

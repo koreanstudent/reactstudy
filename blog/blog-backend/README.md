@@ -23,9 +23,9 @@ joi - request body 검증
 
 npm install node-pre-gyp
 npm install node-pre-gyp install --fallback-to-build
-npm install node
-npm install --g --production windows-build-tools@4.0.0
-npm install bcrypt
+
+npm install bcrypt@3.0.6
+node 버전과 상이해야한다.
 
 npm i -g windows-build-tools - bcrypt 설치시 에러나면 윈도우에서 필수인 c, c++ 관련된 것들과 파이썬같은 것을 설치해서 다른 언어를 사용하는 라이브러리르 지원할 수 있게 해줍니다. bcrypt는 속도 때문에 c++인가 내부적으로 사용
 
