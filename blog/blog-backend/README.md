@@ -31,6 +31,8 @@ npm i -g windows-build-tools - bcrypt 설치시 에러나면 윈도우에서 필
 
 bcrypt - 해시를 만드는 함수와 해시를 검증하는 함수 만들기 
 
+JWT 토큰을 만들기 위해서는 jsonwebtoken 이라는 모듈을 설치해야한다. yarn add jsonwebtoken
+
 ## koa
 
 koa 애플리케이션은 미들웨어의 배열로 구성되어 있다. app.use 함수는 미들웨어 함수를 애플리케이션에 등록한다.
