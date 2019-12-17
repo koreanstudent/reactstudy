@@ -4,10 +4,32 @@ import Joi from 'joi';
 
 const { ObjectId } = mongoose.Types;
 
-export const checkObjectId = (ctx, next) => {
+export const getPostById = async (ctx, next) => {
   const { id } = ctx.params;
   if (!ObjectId.isValid(id)) {
     ctx.status = 400; // Bad Request
+    return;
+  }
+  try {
+    const post = await Post.findById(id);
+    // 포스트가 존재하지 않을 때
+    if (!post) {
+      ctx.status = 404; // Not Found
+      return;
+    }
+    ctx.state.post = post;
+    return next();
+  } catch (e) {
+    ctx.throw(500, e);
+  }
+};
+
+// id로 찾은 포스트가 로그인 중인 사용자가 작성한 포스트인지 확인해준다. 만약 사용자의 포스트가 아니라면 403에러
+export const checkOwnPost = (ctx, next) => {
+  const { user, post } = ctx.state;
+  // mongodb에서 조회한 데이터의 id 값을 문자열과 비교할 때는 반드시 .toString()을 해주어야 한다.
+  if (post.user._id.toString() !== user._id) {
+    ctx.status = 403;
     return;
   }
   return next();
@@ -44,6 +66,7 @@ export const write = async ctx => {
     title,
     body,
     tags,
+    user: ctx.state.user
   });
   try {
     await post.save();
@@ -65,6 +88,13 @@ export const list = async ctx => {
     ctx.status = 400;
     return;
   }
+
+  const { tag, username } = ctx.query;
+  // tag, username 값이 유효하면 객체 안에 넣고, 그렇지 않으면 넣지 않음
+  const query = {
+    ...(username ? { 'user.username': username } : {}),
+    ...(tag ? { tags: tag } : {}),
+  };
 
   try {
     const posts = await Post.find()
@@ -89,17 +119,7 @@ export const list = async ctx => {
   GET /api/posts/:id
 */
 export const read = async ctx => {
-  const { id } = ctx.params;
-  try {
-    const post = await Post.findById(id).exec();
-    if (!post) {
-      ctx.status = 404; // Not Found
-      return;
-    }
-    ctx.body = post;
-  } catch (e) {
-    ctx.throw(500, e);
-  }
+ ctx.body =ctx.state.post;
 };
 
 /*
